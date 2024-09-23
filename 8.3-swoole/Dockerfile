@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         libc-ares-dev \
         libssl-dev \
         apt-utils \
+        procps \
         curl \
         zip
 
