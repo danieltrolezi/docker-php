@@ -2,26 +2,18 @@ FROM php:8.3-cli
 
 RUN apt-get update && apt-get install -y \
         libcurl4-openssl-dev \
+        libssl-dev \
+        zlib1g-dev \
         libbrotli-dev \
         libc-ares-dev \
-        libssl-dev \
-        libprotobuf-dev \
-        libprotoc-dev \
         apt-utils \
         procps \
+        pkg-config \
+        unzip \
         curl \
-        zip \
         supervisor \
         nginx \
         git \
-        && apt-get install -y --no-install-recommends \
-        gcc \
-        g++ \
-        make \
-        autoconf \
-        automake \
-        libtool \
-        pkg-config \
         && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure pcntl --enable-pcntl
